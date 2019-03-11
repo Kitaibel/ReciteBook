@@ -1,0 +1,63 @@
+/*可以自定义的项可以在less文件顶部修改*/
+/*修改总高度*/
+/*修改背景颜色*/
+/*鼠标悬停时的背景颜色*/
+/*字体颜色*/
+/*布局方式:absolute/fixed*/
+/*一级菜单字体大小*/
+/*二级菜单字体大小*/
+/*单个小菜单宽度*/
+/*整体左间距*/
+/*字体种类*/
+/*标题距页面右端的距离(右间距)*/
+.header_container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  background-color: #209e85;
+  color: #ffffff;
+  position: absolute;
+  font-size: 16px;
+  font-family: "yahei";
+  line-height: 50px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  padding-left: 10%;
+}
+.header_container a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.header_first_class_div {
+  display: block;
+  float: left;
+  width: 130px;
+  height: 100%;
+}
+.header_second_class_a {
+  display: none;
+  width: 130px;
+  height: 100%;
+  background-color: #209e85;
+  font-size: 15px;
+}
+.header_first_class_a {
+  display: block;
+  width: 130px;
+  height: 100%;
+}
+.header_first_class_div:hover .header_second_class_a {
+  display: block;
+}
+.header_first_class_a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.header_second_class_a:hover {
+  background-color: #ffffff;
+  display: block;
+}
+.header_tips {
+  position: absolute;
+  right: 300px;
+}

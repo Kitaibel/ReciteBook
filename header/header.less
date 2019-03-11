@@ -1,0 +1,72 @@
+/*可以自定义的项可以在less文件顶部修改*/
+/*修改总高度*/ @header_height: 50px;
+/*修改背景颜色*/ @header_background_color: rgba(32,158,133,1);
+/*鼠标悬停时的背景颜色*/ @header_background_color_hover: rgba(255,255,255,0.3);
+/*字体颜色*/ @header_font_color: rgba(255,255,255,1);
+/*布局方式:absolute/fixed*/ @header_position: absolute;
+/*一级菜单字体大小*/ @header_first_font_size: 16px;
+/*二级菜单字体大小*/ @header_second_font_size: 15px;
+/*单个小菜单宽度*/ @header_class_width: 130px;
+/*整体左间距*/ @padding-left: 10%;
+/*字体种类*/ @header_font_family: "yahei";
+/*标题距页面右端的距离(右间距)*/ @header_tips_right: 300px;
+
+.header_container {
+    box-sizing: border-box;
+    width: 100%;
+    height: @header_height;    
+    background-color: @header_background_color;
+    color: @header_font_color;
+    position: @header_position;  
+    font-size: @header_first_font_size;
+    font-family: @header_font_family;
+    line-height: @header_height;  
+    text-align: center;
+    top: 0;
+    left: 0;
+    padding-left: @padding-left;
+}
+
+.header_container a {
+    text-decoration: none;
+    color: @header_font_color;
+}
+
+.header_first_class_div {
+    display: block;
+    float: left;
+    width: @header_class_width;     
+    height: 100%;
+}
+
+.header_second_class_a {
+    display: none;
+    width: @header_class_width;
+    height: 100%;
+    background-color: @header_background_color;
+    font-size: @header_second_font_size;
+}
+
+.header_first_class_a {
+    display: block;
+    width: @header_class_width;     
+    height: 100%;
+}
+
+.header_first_class_div:hover .header_second_class_a {
+    display: block;
+}
+
+.header_first_class_a:hover {
+    background-color: @header_background_color_hover;
+}
+
+.header_second_class_a:hover {
+    background-color: @header_background_color_hover+@header_background_color;
+    display: block;
+}
+
+.header_tips {
+    position: absolute;
+    right: @header_tips_right;
+}
