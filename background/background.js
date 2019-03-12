@@ -14,9 +14,28 @@ var canvas = document.getElementById("cas");
 
     function resize() {
 
-    canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+        //这里加了导航栏和页脚的自适应
+
+        if (window.innerWidth <= 1300) {
+            $(".header_container").css({"width":"1300px"});
+            $(".footer").css({"width":"1300px"});
+        }
+        else {
+            $(".header_container").css({"width":"100%"});
+            $(".footer").css({"width":"100%"});
+        }
+        if (window.innerHeight <= 700) {
+            $(".container").css({"height":"700px"});
+            $(".footer").css({"bottom":"" + window.innerHeight -700 + "px"});
+        }
+        else {
+            $(".container").css({"height":"100%"});
+            $(".footer").css({"bottom":"0"});
+        }
 
     }
 
