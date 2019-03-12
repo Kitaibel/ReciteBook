@@ -20,8 +20,25 @@
     <div class="container">
 
         <div class="main">
-            <div class="showpage"></div>
-            <div class="loginpage"></div>
+            <div class="showpage">Broaden the Horizon</div>
+            <div class="loginpage">
+                <form id="loginform" name="loginform" action="<%=path %>/login" method="post">
+                    <div class="username_text login_text">Username</div>
+                    <input type="text" name="username" class="username login_input" id="username" placeholder="Please input username">
+                    <div class="password_text login_text">Password</div>
+                    <input type="password" name="password" class="password login_input" id="password" placeholder="Please input password">
+                    <div class="checkbox mg-b25">
+                        <label>
+                             <input type="checkbox"><span class="remember_password">Remember Password</span>
+                        </label>
+                        <p id="error" class="error_text"></p>
+                    </div>
+                    <p>
+                        <button id="login" type="submit" style="submit" class="login_btn">Sign in</button>
+                        <a href="../signUp/index.html"><button id="login" type="submit" style="submit" class="login_btn">Sign up</button></a>
+                    </p>
+                </form>
+            </div>
         </div>
 
 
