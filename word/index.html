@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Book</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../background/background.css">
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <div class="header_container" id="header_container"></div>
+
+    <!--页面主体 -->
+    <canvas id="cas"></canvas>
+    <div class="container">
+
+        <div class="main">
+            <div class="showword">
+                <div class="question">
+                    <div class="word_text">experience</div>
+                    <div class="choose_btn">
+                        <button class="remember choose_button" id="remember">认识</button>
+                        <button class="not_remember choose_button" id="not_remember">不认识</button>
+                    </div>
+                </div>
+                <div class="result">
+                    <div class="result_text">
+                        <div class="result_word">experience</div>
+                        <div class="result_mean">经历</div>
+                    </div>
+                    <div class="next_btn">
+                        <button class="remember choose_button" id="next">下一个</button>
+                        <button class="not_remember choose_button" id="cancel">认错了</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu_btn">
+                <button class="menu_button">添加新单词</button>
+                <button class="menu_button">移除此单词</button>
+                <button class="menu_button">清空单词库</button>
+                <button class="menu_button">导入单词库</button>
+                <button class="menu_button">支持作者</button>
+            </div>
+        </div>
+
+
+        <!-- 页脚 -->
+        <div class="footer">
+            <p class="footerText">Copyright © 2019-2020 版权所有：Meitnerium</p>
+            <a href="http://www.miitbeian.gov.cn/" class="footerText icp">蜀ICP备18036997号-1</a>
+        </div>
+    </div>
+    
+
+    
+
+    <!-- 脚本 -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <script src="../background/background.js"></script>
+    <script src="../header/header.js"></script>
+
+</body>
+</html>
