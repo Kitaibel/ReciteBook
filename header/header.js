@@ -9,7 +9,7 @@ for(var k=1;k<=10;k++)
 var header_tips = "Meitnerium's English Word Book";
 //一级菜单内容和链接
 classes[1] = new first_class("首页","http://liuzhiyuan.online");
-classes[2] = new first_class("单词","#");
+classes[2] = new first_class("单词","http://liuzhiyuan.online/word/index.html");
 classes[3] = new first_class("读书","#");
 classes[4] = new first_class("个人中心","#");
 //二级菜单内容和链接(编号与一级对应)
