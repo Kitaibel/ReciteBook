@@ -37,7 +37,7 @@ body {
     line-height: 260px;
     height: 260px;
     width: 100%;
-    color: #fff;
+    color: rgba(255,168,48,0.8);
     font-size: 80px;
     font-weight: 700;
     word-break: keep-all;
@@ -67,13 +67,13 @@ body {
 }
 
 .not_remember {
-     background-color: rgba(191,47,50,0.5);
+    background-color: rgba(191,47,50,0.5);
 }
 
 .result_text {
     width: 100%;
     height: 260px;
-    color: #fff;
+    color: rgba(255,168,48,0.8);
     text-align: center;
     font-weight: 700;
     word-break: keep-all;
@@ -107,7 +107,7 @@ body {
 }
 
 .menu_button {
-    color: rgba(17,190,115,0.8);
+    color: rgba(255,168,48,0.8);
     font-weight: 700;
     font-size: 30px;
     width: 80%;
