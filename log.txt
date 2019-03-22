@@ -1,0 +1,3 @@
+前端：html+css+javascript+jquery
+后端：php mySQL
+服务器：WampServer Nginx
