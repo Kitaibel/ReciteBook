@@ -23,11 +23,18 @@ if ($conn->connect_error) {
 } 
 echo "Connected successfully<br>";
 
-$sql = "SELECT * FROM userPID";
+$sql = "SELECT * FROM userkey where UserUsername='" . $_POST["username"] . "' and UserPassword='" . $_POST["password"] . "'";
 $result = $conn->query($sql);
 
 $row=mysqli_fetch_assoc($result);
-printf ("%d : %d",$row["UID"],$row["UID2"]);
+printf ("%d",$row["UserPID"]);
+
+if($row["UserPID"] != 0) {   //登录成功
+    header('Location: http://www.liuzhiyuan.online/');
+}
+else {
+    header('Location: http://www.liuzhiyuan.online/login');
+}
 
 ?>
 
