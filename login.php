@@ -25,16 +25,16 @@ $result = $conn->query($sql);
 $row = mysqli_fetch_assoc($result);
 
 if($row["UserPID"] != 0) {   //登录成功
-    if(array_key_exists("remember", $_POST) == true) {
-        $remember = "yes";
-    }
-    else {
-        $remember = "no";
-    }
+    // if(array_key_exists("remember", $_POST) == true) {
+    //     $remember = "yes";
+    // }
+    // else {
+    //     $remember = "no";
+    // }
     setcookie("UserPID",$row["UserPID"],time()+3600*24,"../");
     setcookie("UserUsername",$row["UserUsername"],time()+3600*24,"../");
     setcookie("UserPassword",$row["UserPassword"],time()+3600*24,"../");
-    setcookie("remember",$remember,time()+3600*24,"../");
+    //setcookie("remember",$remember,time()+3600*24,"../");
     header('Location: index.html');
 }
 else {
