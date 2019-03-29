@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,24 +19,20 @@
         <div class="main">
             <div class="showpage">Broaden the Horizon</div>
             <div class="loginpage">
-                <form id="loginform" name="loginform" action="../php/login.php" method="post">
+                <form id="loginform" name="loginform" action="index.php" method="post">
                     <div class="username_text login_text">Username</div>
                     <input type="text" name="username" class="username login_input" id="username" placeholder="Please input username">
                     <div class="password_text login_text">Password</div>
                     <input type="password" name="password" class="password login_input" id="password" placeholder="Please input password">
                     <div class="checkbox mg-b25">
                         <label>
-                             <input type="checkbox" name="remember"><span class="remember_password">Remember Password</span>
+                             <input type="checkbox"><span class="remember_password">Remember Password</span>
                         </label>
-                        <p id="error" class="error_text">
-                            <!-- 用户名或密码错误 -->
-                        </p>
+                        <p id="error" class="error_text"></p>
                     </div>
                     <p>
-                        <button id="login1" type="submit" style="submit" class="login_btn">Sign in</button>
-                        <a href="../signUp/index.html">
-                            <button id="login2" type="submit" style="submit" class="login_btn">Sign up</button>
-                        </a>
+                        <button id="login" type="submit" style="submit" class="login_btn">Sign in</button>
+                        <a href="../signUp/index.html"><button id="login" type="submit" style="submit" class="login_btn">Sign up</button></a>
                     </p>
                 </form>
             </div>
@@ -55,14 +51,43 @@
 
     <!-- 脚本 -->
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript">
-        var url = location.search; //获取url中"?"符后的字串
-        if (location.search === "?error") {
-           $("#error").text("用户名或密码错误"); 
-        }
-    </script>
     <script src="index.js"></script>
     <script src="../background/background.js"></script>
     <script src="../header/header.js"></script>
+
+<?php 
+function judge() {
+    $servername = "localhost"; 
+    $username = "ReciteBook"; 
+    $password = "uestcXA#3008"; 
+    $dbname = "userinfo";
+    $port = 3306;
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname,$port); 
+
+
+    // 检测连接 
+    if ($conn->connect_error) { 
+        die("Connection failed: " . $conn->connect_error); 
+    } 
+    echo "Connected successfully<br>";
+
+    $sql = "SELECT * FROM userkey where UserUsername='" . $_POST["username"] . "' and UserPassword='" . $_POST["password"] . "'";
+    $result = $conn->query($sql);
+
+    $row=mysqli_fetch_assoc($result);
+    printf ("%d",$row["UserPID"]);
+
+    if($row["UserPID"] != 0) {   //登录成功
+        header('Location: http://www.liuzhiyuan.online/');
+    }
+    else {
+        header('Location: http://www.liuzhiyuan.online/login');
+    }
+}
+    
+
+?>
+
 </body>
 </html>

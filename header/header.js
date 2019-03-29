@@ -23,7 +23,8 @@ function second_class(name,href) {
     this.name = name;
     this.href = href;
 }
-onload = function() {
+
+function header() {
     var i=1;
     var j;
     var header_first_div = new Array();
