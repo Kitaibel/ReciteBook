@@ -11,7 +11,7 @@ var header_tips = "Meitnerium's English Word Book";
 classes[1] = new first_class("首页","http://liuzhiyuan.online");
 classes[2] = new first_class("单词","http://liuzhiyuan.online/word/index.html");
 classes[3] = new first_class("读书","#");
-classes[4] = new first_class("个人中心","http://liuzhiyuan.online/login/index.html");
+classes[4] = new first_class("个人中心","http://liuzhiyuan.online/personal/index.html");
 //二级菜单内容和链接(编号与一级对应)
 //无二级菜单
 
@@ -23,7 +23,8 @@ function second_class(name,href) {
     this.name = name;
     this.href = href;
 }
-onload = function() {
+
+function header() {
     var i=1;
     var j;
     var header_first_div = new Array();

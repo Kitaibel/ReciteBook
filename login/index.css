@@ -46,12 +46,18 @@ body {
     font-size: 40px;
     font-weight: 700;
     margin-top: 10px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .login_input {
     width: 60%;
     height: 30px;
     border: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .login_btn {
@@ -63,16 +69,33 @@ body {
     height: 30px;
     margin-left: 5%;
     margin-top: 10px;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgba(221,221,221,1);
+}
+
+a {
+    text-decoration: none;
 }
 
 .remember_password {
     color: rgba(32,158,133,0.9);
     font-size: 10px;
     font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .error_text {
     color: red;
     font-size: 10px;
     font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
 }

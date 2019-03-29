@@ -10,7 +10,7 @@ onload = function() {
          return null;
    }
 
-   if(getCookie("UserPID")>0) {
-      window.location.href = "../personal/index.html";
+   if(getCookie("UserPID") == 0 || getCookie("UserPID") == null) {
+      window.location.href = "../login/index.html";
    }
 }
