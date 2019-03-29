@@ -23,6 +23,10 @@ $sql = "SELECT * FROM userkey where UserUsername='" . $_POST["username"] . "' an
 $result = $conn->query($sql);
 
 $row = mysqli_fetch_assoc($result);
+<<<<<<< HEAD
+=======
+echo $_POST["remember"];
+>>>>>>> 9e59999907a9d547606f7c7df7a4202863ec32f2
 
 if($row["UserPID"] != 0) {   //登录成功
     if(array_key_exists("remember", $_POST) == true) {
@@ -31,10 +35,15 @@ if($row["UserPID"] != 0) {   //登录成功
     else {
         $remember = "no";
     }
+<<<<<<< HEAD
     setcookie("UserPID",$row["UserPID"],time()+3600*24,"../");
     setcookie("UserUsername",$row["UserUsername"],time()+3600*24,"../");
     setcookie("UserPassword",$row["UserPassword"],time()+3600*24,"../");
     setcookie("remember",$remember,time()+3600*24,"../");
+=======
+    $value ="UserPID=" . $row["UserPID"] . ";UserUsername=" . $row["UserUsername"] . ";UserPassword=" . $row["UserPassword"] . ";remember=" . $remember;
+    setcookie("ReciteBookCookie",$value,time()+3600*24);
+>>>>>>> 9e59999907a9d547606f7c7df7a4202863ec32f2
     header('Location: ../index.html');
 }
 else {

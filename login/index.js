@@ -1,5 +1,6 @@
 onload = function() {
    header();
+<<<<<<< HEAD
 
    function getCookie(name)
    {
@@ -13,4 +14,6 @@ onload = function() {
    if(getCookie("UserPID")>0) {
       window.location.href = "../personal/index.html";
    }
+=======
+>>>>>>> 9e59999907a9d547606f7c7df7a4202863ec32f2
 }

@@ -75,14 +75,6 @@ body {
     word-break: keep-all;
     white-space: nowrap;
     overflow: hidden;
-<<<<<<< HEAD
-    background-color: rgba(221,221,221,1);
-}
-
-a {
-    text-decoration: none;
-=======
->>>>>>> 9e59999907a9d547606f7c7df7a4202863ec32f2
 }
 
 .remember_password {
