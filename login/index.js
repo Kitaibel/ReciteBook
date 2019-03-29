@@ -13,4 +13,9 @@ onload = function() {
    if(getCookie("UserPID")>0) {
       window.location.href = "../personal/index.html";
    }
+
+   // if(getCookie("remember") == "yes") {
+   //    $("#username").value = getCookie("UserUsername");
+   //    $("#password").value = getCookie("UserPassword");
+   // }
 }
