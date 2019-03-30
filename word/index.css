@@ -26,11 +26,11 @@ body {
 }
 
 .question {
-    /*display: none;*/
+    display: none;
 }
 
 .result {
-    display: none;
+/*    display: none;*/
 }
 
 .word_text {

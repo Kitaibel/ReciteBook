@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../footer/footer.css">
     <!-- 脚本 -->
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="../header/header.js"></script>
     <script src="index.js"></script>
 </head>
@@ -20,10 +21,10 @@
     <canvas id="cas"></canvas>
     <div class="container">
 
-        <div class="main">
+        <div class="main" id="main">
             <div class="showword">
                 <div class="question">
-                    <div class="word_text" id="word_text">experience</div>
+                    <div class="word_text" id="word_text">{{ word }}</div>
                     <div class="choose_btn">
                         <button class="remember choose_button" id="remember">认识</button>
                         <button class="not_remember choose_button" id="not_remember">不认识</button>
@@ -31,8 +32,8 @@
                 </div>
                 <div class="result">
                     <div class="result_text">
-                        <div class="result_word">experience</div>
-                        <div class="result_mean">经历</div>
+                        <div class="result_word">{{ word }}</div>
+                        <div class="result_mean">{{ mean }}</div>
                     </div>
                     <div class="next_btn">
                         <button class="remember choose_button" id="next">下一个</button>
@@ -45,7 +46,7 @@
                 <button class="menu_button">移除此单词</button>
                 <button class="menu_button">清空单词库</button>
                 <button class="menu_button">导入单词库</button>
-                <button class="menu_button">支持作者</button>
+                <button class="menu_button">当前等级:{{ level }}</button>
             </div>
         </div>
 
