@@ -17,3 +17,68 @@ body {
     background-color: rgba(0,0,0,0.3);
     border-radius: 0.5%;
 }
+
+.add_input {
+    display: block;
+    width: 80%;
+    margin: 30px 10%; 
+    height: 50px;
+    border: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 30px;
+}
+
+.menu_button {
+    color: rgba(255,168,48,0.8);
+    font-weight: 700;
+    font-size: 30px;
+    width: 80%;
+    margin: 20px 10%;
+    border: none;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.error_text {
+    margin-left: 10%;
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    display: none;
+}
+
+.success_text {
+    margin-left: 10%;
+    color: green;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    display: none;
+}
+
+.position_air {
+    margin-left: 10%;
+    color: rgba(255,255,255,0);
+    font-size: 20px;
+    font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.chooseLevel {
+    margin-left: 10%;
+    font-size: 20px;
+    font-weight: 700;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+}

@@ -26,11 +26,11 @@ body {
 }
 
 .question {
-    display: none;
+    /*display: none;*/
 }
 
 .result {
-/*    display: none;*/
+    display: none;
 }
 
 .word_text {
@@ -117,4 +117,12 @@ body {
     word-break: keep-all;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.word_mode1 {
+    display: block;
+}
+
+.word_mode2 {
+    display: none;
 }

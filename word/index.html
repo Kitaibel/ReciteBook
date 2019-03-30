@@ -24,10 +24,11 @@
         <div class="main" id="main">
             <div class="showword">
                 <div class="question">
-                    <div class="word_text" id="word_text">{{ word }}</div>
+                    <div class="word_text word_mode1" id="word_text_mode1">{{ word }}</div>
+                    <div class="word_text word_mode2" id="word_text_mode2">{{ mean }}</div>
                     <div class="choose_btn">
-                        <button class="remember choose_button" id="remember">认识</button>
-                        <button class="not_remember choose_button" id="not_remember">不认识</button>
+                        <button class="remember choose_button question_button" id="remember" onclick="remember()">认识</button>
+                        <button class="not_remember choose_button question_button" id="not_remember" onclick="unremember()">不认识</button>
                     </div>
                 </div>
                 <div class="result">
@@ -36,17 +37,17 @@
                         <div class="result_mean">{{ mean }}</div>
                     </div>
                     <div class="next_btn">
-                        <button class="remember choose_button" id="next">下一个</button>
-                        <button class="not_remember choose_button" id="cancel">认错了</button>
+                        <button class="remember choose_button result_button" id="next" onclick="next_word()">{{ right_result }}</button>
+                        <button class="not_remember choose_button result_button" id="cancel" onclick="error_word()">{{ wrong_result }}</button>
                     </div>
                 </div>
             </div>
             <div class="menu_btn">
-                <button class="menu_button">添加新单词</button>
+                <button class="menu_button" onclick="addword()">添加新单词</button>
                 <button class="menu_button">移除此单词</button>
                 <button class="menu_button">清空单词库</button>
-                <button class="menu_button">导入单词库</button>
-                <button class="menu_button">当前等级:{{ level }}</button>
+                <button class="menu_button" onclick="changeMode()">切换模式</button>
+                <button class="menu_button" onclick="changeLevel()">当前等级:{{ level }}</button>
             </div>
         </div>
 
