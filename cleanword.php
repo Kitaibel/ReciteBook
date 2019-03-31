@@ -20,23 +20,23 @@ if ($conn->connect_error) {
 switch ($_POST["level"])
 {
     case 1:
-        $sql = "UPDATE userwords SET UserLevel1 = json_set(UserLevel1,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        $sql = "UPDATE userwords SET UserLevel1 = null where UserPID='" . $_POST["userpid"] . "'";
         break;
     case 2:
-        $sql = "UPDATE userwords SET UserLevel2 = json_set(UserLevel2,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        $sql = "UPDATE userwords SET UserLevel2 = null where UserPID='" . $_POST["userpid"] . "'";
         break;
     case 3:
-        $sql = "UPDATE userwords SET UserLevel3 = json_set(UserLevel3,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        $sql = "UPDATE userwords SET UserLevel3 = null where UserPID='" . $_POST["userpid"] . "'";
         break;
     case 4:
-        $sql = "UPDATE userwords SET UserLevel4 = json_set(UserLevel4,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        $sql = "UPDATE userwords SET UserLevel4 = null where UserPID='" . $_POST["userpid"] . "'";
         break;
     case 5:
-        $sql = "UPDATE userwords SET UserLevel5 = json_set(UserLevel5,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        $sql = "UPDATE userwords SET UserLevel5 = null where UserPID='" . $_POST["userpid"] . "'";
         break;
 } 
 
-//UPDATE 'userwords' SET 'UserLevel2'=json_set(UserLevel2,"$.dull","%E6%9E%AF%E7%87%A5%E7%9A%84") WHERE 'UserPID' = 1
+//DELETE FROM table_name [WHERE Clause]
 $retval = $conn->query($sql);
 //$retval = mysql_query( $sql, $conn );
 

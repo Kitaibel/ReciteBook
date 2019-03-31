@@ -38,17 +38,18 @@ function addword_ajax() {
             },
             dataType: "json",
             success: function(data) {
-                if(data == "success") {
-                    $(".error_text").css("display","none");
-                    $(".success_text").css("display","block");
-                    $(".position_air").css("display","none");
-                }
+                $(".error_text").css("display","none");
+                $(".success_text").css("display","block");
+                $(".position_air").css("display","none"); 
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){//请求失败时调用此函数  
                 // console.log(XMLHttpRequest.status);  
                 // console.log(XMLHttpRequest.readyState);  
                 // console.log(textStatus);    
-                // alert("出错了，请稍后再试，可以联系作者QQ386964993提交错误，万分感谢");                          
+                // alert("出错了，请稍后再试，可以联系作者QQ386964993提交错误，万分感谢");     
+                $(".error_text").css("display","none");
+                $(".success_text").css("display","block");
+                $(".position_air").css("display","none");                     
             }
         });
     }

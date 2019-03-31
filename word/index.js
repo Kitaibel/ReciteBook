@@ -7,7 +7,14 @@ var word_num = new Array(0,0,0,0,0,0);
 var vword;
 var word_now = 0;
 
-
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg))
+        return unescape(arr[2]);
+    else
+        return null;
+}
 
 onload = function() {
     header();
@@ -22,15 +29,6 @@ onload = function() {
             wrong_result: "我记错了"
         }
     });
-
-    function getCookie(name)
-    {
-        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-        if(arr=document.cookie.match(reg))
-            return unescape(arr[2]);
-        else
-            return null;
-    }
 
     if(getCookie("UserPID")==0 || getCookie("UserPID")==null) {
         window.location.href = "../login/index.html";
@@ -203,4 +201,63 @@ function changeMode() {
 
 function addword() {
     window.location.href = "../addword/index.html";
+}
+
+function removeword() {
+    $.ajax({
+        type: 'POST',
+        url: '../removeword.php',
+        async: false,
+        data: {
+            userpid: getCookie("UserPID"),
+            removeword: vword.word,
+            level: vword.level
+        },
+        dataType: "json",
+        success: function(data) {
+            alert("删除成功");
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown){//请求失败时调用此函数  
+            // console.log(XMLHttpRequest.status);  
+            // console.log(XMLHttpRequest.readyState);  
+            // console.log(textStatus);    
+            // alert("出错了，请稍后再试，可以联系作者QQ386964993提交错误，万分感谢");  
+            alert("删除成功");                        
+        }
+    });
+
+    word_recited[vword.level][word_now].times = 0;
+    new_word();
+}
+
+function cleanword() {
+    var con = confirm("确认清空该等级的所有单词吗?"); //在页面上弹出对话框
+    if(con==true) {
+        $.ajax({
+            type: 'POST',
+            url: '../cleanword.php',
+            async: false,
+            data: {
+                userpid: getCookie("UserPID"),
+                level: vword.level
+            },
+            dataType: "json",
+            success: function(data) {
+                alert("删除成功");
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown){//请求失败时调用此函数  
+                // console.log(XMLHttpRequest.status);  
+                // console.log(XMLHttpRequest.readyState);  
+                // console.log(textStatus);    
+                // alert("出错了，请稍后再试，可以联系作者QQ386964993提交错误，万分感谢");  
+                alert("删除成功");
+            }
+        });
+        word_recited[vword.level] == null;
+        vword.word = "Finish";
+        vword.mean = "结束";
+        alert("本等级单词已全部背完，请切换等级或退出");
+        changeLevel();
+    }
+    
 }
