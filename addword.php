@@ -16,15 +16,37 @@ if ($conn->connect_error) {
 //echo "Connected successfully<br>";
 //$posttest = $_POST["userpid"];
 
-$sql = "INSERT * FROM userwords where UserPID='" . $_POST["userpid"] . "'";
+//$sql = "UPDATE userwords SET UserLevel" . $_POST["level"] . " = json_set(UserLevel" . $_POST["level"] . ",'". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+switch ($_POST["level"])
+{
+    case 1:
+        $sql = "UPDATE userwords SET UserLevel1 = json_set(UserLevel1,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        break;
+    case 2:
+        $sql = "UPDATE userwords SET UserLevel2 = json_set(UserLevel2,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        break;
+    case 3:
+        $sql = "UPDATE userwords SET UserLevel3 = json_set(UserLevel3,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        break;
+    case 4:
+        $sql = "UPDATE userwords SET UserLevel4 = json_set(UserLevel4,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        break;
+    case 5:
+        $sql = "UPDATE userwords SET UserLevel5 = json_set(UserLevel5,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID='" . $_POST["userpid"] . "'";
+        break;
+} 
+
 //UPDATE 'userwords' SET 'UserLevel2'=json_set(UserLevel2,"$.dull","%E6%9E%AF%E7%87%A5%E7%9A%84") WHERE 'UserPID' = 1
-$result = $conn->query($sql);
+$retval = $conn->query($sql);
+//$retval = mysql_query( $sql, $conn );
 
-$row = mysqli_fetch_assoc($result);
+// if(! $retval ) {
+//     die('Could not update data: ' . mysql_error());
+// }
+// else {
+    //echo "success";
+//}
 
-$ajax_result = json_encode(array('wordlevel1' => $userlevel1, 'wordlevel2' => $userlevel2, 'wordlevel3' => $userlevel3, 'wordlevel4' => $userlevel4, 'wordlevel5' => $userlevel5));
-
-echo "success";
 // echo 1;
 
 ?>
