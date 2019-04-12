@@ -17,7 +17,33 @@
     <div class="container">
 
         <div class="main">
-            
+            <div class="showpage">Strat Your Trip</div>
+            <div class="loginpage">
+                <form id="loginform" name="loginform" action="../signup.php" method="post">
+                    <div class="username_text login_text">Username</div>
+                    <input type="text" name="username" class="username login_input" id="username" placeholder="Please input username">
+                    <div class="password_text login_text">Password</div>
+                    <input type="password" name="password" class="password login_input" id="password" placeholder="Please input password">
+                    <div class="telephone_text login_text">Telephone</div>
+                    <input type="text" name="telephone" class="telephone login_input" id="telephone" placeholder="Please input telephone">
+                    <div class="email_text login_text">Email</div>
+                    <input type="text" name="email" class="email login_input" id="email" placeholder="Please input email">
+                    <div class="checkbox mg-b25">
+                        <!-- <label>
+                             <input type="checkbox" name="remember"><span class="remember_password">Remember Password</span>
+                        </label> -->
+                        <p id="error" class="error_text">
+                            <!-- 用户名或密码错误 -->
+                        </p>
+                    </div>
+                    <p>
+                        <button id="login1" type="submit" class="login_btn">Sign up</button>
+                        <a href="../login/index.html">
+                            <button type="button" id="login2" class="login_btn">Sign in</button>
+                        </a>
+                    </p>
+                </form>
+            </div>
         </div>
 
 
@@ -33,9 +59,17 @@
 
     <!-- 脚本 -->
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        var url = location.search; //获取url中"?"符后的字串
+        if (location.search === "?NameError") {
+            $("#error").text("用户名已存在"); 
+        }
+        else if(location.search === "?UnknownError") {
+            $("#error").text("未知错误，请稍后再试"); 
+        }
+    </script>
     <script src="index.js"></script>
     <script src="../background/background.js"></script>
     <script src="../header/header.js"></script>
-
 </body>
 </html>
