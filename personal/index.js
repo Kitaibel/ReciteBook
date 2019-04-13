@@ -7,9 +7,15 @@ function getCookie(name) {
 }
 
 onload = function() {
-   header();
+    header();
 
-   if(getCookie("UserPID") == 0 || getCookie("UserPID") == null) {
-      window.location.href = "../login/index.html";
-   }
+    if(getCookie("UserPID") == false) {
+        console.log(getCookie("UserPID"));
+        //window.location.href = "../login/index.html";
+    }
+
+}
+
+function exit_login() {
+    window.location.href = "../login/index.html?exit";
 }

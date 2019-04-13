@@ -57,8 +57,18 @@
     <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript">
         var url = location.search; //获取url中"?"符后的字串
+                
+        function setCookie(c_name,value,expiredays) {
+           var exdate=new Date();
+           exdate.setDate(exdate.getDate()+expiredays);
+           document.cookie=c_name+ "=" +escape(value)+
+           ((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+        }
         if (location.search === "?error") {
            $("#error").text("用户名或密码错误"); 
+        }
+        else if(location.search === "?exit") {
+            setCookie("UserPID",0,2);
         }
     </script>
     <script src="index.js"></script>
