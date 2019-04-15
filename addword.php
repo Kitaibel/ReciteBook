@@ -58,10 +58,10 @@ switch ($_POST["level"])
         break;
     case 5:
         //if($row["UserLevel5"] != null) {
-        //    $sql = "UPDATE userwords SET UserLevel5 = json_set(UserLevel5,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID=" . $_POST["userpid"] . "";
+             $sql = "UPDATE userwords SET UserLevel5 = json_set(UserLevel5,'$.". $_POST["newword"] ."','". $_POST["newmean"]. "') where UserPID=" . $_POST["userpid"] . "";
         // }
         // else {
-             $sql = "UPDATE userwords SET UserLevel5 = JSON_OBJECT('".$_POST["newword"]."','".$_POST["newmean"]."') where UserPID=" . $_POST["userpid"] . "";
+         //    $sql = "UPDATE userwords SET UserLevel5 = '{}' where UserPID=" . $_POST["userpid"] . "";
         // }
         break;
 } 

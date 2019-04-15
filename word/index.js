@@ -30,7 +30,8 @@ onload = function() {
         }
     });
 
-    if(getCookie("UserPID")==0 || getCookie("UserPID")==null) {
+    if(getCookie("UserPID") == false) {
+        console.log(getCookie("UserPID"));
         window.location.href = "../login/index.html";
     }
     else {
@@ -253,7 +254,7 @@ function cleanword() {
                 alert("删除成功");
             }
         });
-        word_recited[vword.level] == null;
+        word_recited[vword.level] = null;
         vword.word = "Finish";
         vword.mean = "结束";
         alert("本等级单词已全部背完，请切换等级或退出");

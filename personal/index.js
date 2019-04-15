@@ -11,7 +11,7 @@ onload = function() {
 
     if(getCookie("UserPID") == false) {
         console.log(getCookie("UserPID"));
-        //window.location.href = "../login/index.html";
+        window.location.href = "../login/index.html";
     }
 
 }

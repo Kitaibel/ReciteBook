@@ -9,7 +9,7 @@ function getCookie(name) {
 onload = function() {
     header();
 
-    if(getCookie("UserPID")==0 || getCookie("UserPID")==null) {
+    if(getCookie("UserPID")==false) {
         window.location.href = "../login/index.html";
     }
 }
