@@ -30,7 +30,7 @@ onload = function() {
         }
     });
 
-    if(getCookie("UserPID") == false) {
+    if(getCookie("UserPID") == null) {
         console.log(getCookie("UserPID"));
         window.location.href = "../login/index.html";
     }

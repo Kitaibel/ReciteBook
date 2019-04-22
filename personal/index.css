@@ -11,9 +11,26 @@ body {
 .main {
     width: 80%;
     margin: 0 10%;
-    height: 450px;
+    height: 250px;
     position: absolute;
     top: 150px;
     background-color: rgba(0,0,0,0.3);
     border-radius: 0.5%;
+    padding: 100px 0;
+}
+
+.username {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+    color: rgba(255,168,48,0.8);
+}
+
+.exit {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: rgba(255,168,48,0.8);
+    margin: 0 auto;
 }

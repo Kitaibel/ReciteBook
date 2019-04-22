@@ -9,11 +9,11 @@ function getCookie(name) {
 onload = function() {
     header();
 
-    if(getCookie("UserPID") == false) {
-        console.log(getCookie("UserPID"));
+    if(getCookie("UserPID") == null) {
         window.location.href = "../login/index.html";
     }
 
+    $(".username").text( "Hello, " + getCookie("UserUsername"));
 }
 
 function exit_login() {
