@@ -49,6 +49,7 @@ onload = function() {
                 words_level[3] = JSON.parse(data.wordlevel3);
                 words_level[4] = JSON.parse(data.wordlevel4);
                 words_level[5] = JSON.parse(data.wordlevel5);
+                words_level[0] =  $.extend({},words_level[1],words_level[2],words_level[3],words_level[4],words_level[5]);
                 console.log("数据加载完成");
             },
             error: function(XMLHttpRequest, textStatus, errorThrown){//请求失败时调用此函数  
@@ -78,6 +79,15 @@ onload = function() {
         }
 
         //存入新对象
+        for (var i in words_level[0]) {
+            word_recited[0][word_num[0]] = {
+                mean: decodeURI(words_level[0][i]),
+                times: 1,
+                word: i
+            };
+            word_num[0]++;
+        }
+
         for (var i in words_level[1]) {
             word_recited[1][word_num[1]] = {
                 mean: decodeURI(words_level[1][i]),
@@ -179,10 +189,10 @@ function error_word() {
 }
 
 function changeLevel() {
-    var new_level = prompt("请输入切换的等级，输入1~5之间的数字","");
-    while(new_level != 1 && new_level != 2 && new_level != 3 && new_level != 4 && new_level != 5) {
-        alert("输入错误，请输入1~5之间的数字");
-        new_level = prompt("请输入切换的等级，输入1~5之间的数字","");
+    var new_level = prompt("请输入切换的等级，输入0~5之间的数字，0为背诵所有单词","",);
+    while(new_level != 0 && new_level != 1 && new_level != 2 && new_level != 3 && new_level != 4 && new_level != 5) {
+        alert("输入错误，请输入0~5之间的数字");
+        new_level = prompt("请输入切换的等级，输入0~5之间的数字","");
     }
     vword.level = new_level;
     new_word();
